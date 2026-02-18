@@ -55,4 +55,5 @@ jobs:
       - name: Deploy After
         run: |
           echo "Test deployment"
-          echo "USERNAME = $USERNAME"
+          echo env.USERNAME
+          echo "aa: ${ env.USERNAME }"
