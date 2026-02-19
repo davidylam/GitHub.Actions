@@ -2,6 +2,21 @@ name: Environments
 
 on:
   workflow_dispatch:
+    inputs:
+      name:
+        type: choice
+        description: 'Which branch'
+        options:
+          - DEV
+          - STAGE
+          - PROD
+      message:
+        required: true
+        type: string
+      use-emoji:
+        type: boolean
+        description: 'Include 🎉🤣 emojis'
+        default: true
 
 jobs:
   test:
