@@ -71,6 +71,7 @@ jobs:
         run: |
           echo "Test deployment"
           echo "branch name: ${{ github.ref_name }}"
-          if: ${{ github.event.inputs.name }} == "DEV" 
+          echo "${{ github.event.inputs.name }}"
+          if: "${{ github.event.inputs.name }}" == "DEV" 
           run: echo "MATCH DEV BRANCH"
           
