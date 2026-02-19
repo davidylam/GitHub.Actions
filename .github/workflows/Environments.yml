@@ -68,13 +68,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Deploy After
+        if: ${{ github.event.inputs.name == 'DEV' }} 
         run: |
           echo "Test deployment"
           echo "branch name: ${{ github.ref_name }}"
-          echo "${{ github.event.inputs.name }}"
-          if: ${{ github.event.inputs.name == 'DEV' }} 
-          run: |
-            echo "MATCH DEV BRANCH"
-            echo "${{ github.event.inputs.message }}"
-            echo "${{ github.event.inputs.use-emoji }}"
+          echo "${{ github.event.inputs.name }}
+          echo "MATCH DEV BRANCH"
+          echo "${{ github.event.inputs.message }}"
+          echo "${{ github.event.inputs.use-emoji }}"
           
