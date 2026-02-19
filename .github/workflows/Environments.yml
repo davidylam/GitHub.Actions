@@ -55,5 +55,7 @@ jobs:
       - name: Deploy After
         run: |
           echo "Test deployment"
-          echo "aa: ${ env.USERNAME }"
+          echo "branch name: ${{ github.ref_name }}"
+          if: ${{ github.ref_name }} == "DEV" 
+          run: echo "MATCH DEV BRANCH"
           
