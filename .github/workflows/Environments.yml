@@ -72,6 +72,9 @@ jobs:
           echo "Test deployment"
           echo "branch name: ${{ github.ref_name }}"
           echo "${{ github.event.inputs.name }}"
-          if: "${{ github.event.inputs.name }}" == "DEV" 
-          run: echo "MATCH DEV BRANCH"
+          if: ${{ github.event.inputs.name == 'DEV' }} 
+          run: |
+            echo "MATCH DEV BRANCH"
+            echo "${{ github.event.inputs.message }}"
+            echo "${{ github.event.inputs.use-emoji }}"
           
