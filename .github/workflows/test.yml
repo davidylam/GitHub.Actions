@@ -13,7 +13,7 @@ jobs:
 
     steps:
       - name: Install Python and Node JS
-        uses: InterviewProOrg/CompositeActions@main
+        uses: davidylam/GitHub.Actions@main
         
       - name: Downlaod artifact
         uses: actions/download-artifact@v4
