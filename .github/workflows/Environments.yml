@@ -77,3 +77,12 @@ jobs:
           echo "${{ github.event.inputs.message }}"
           echo "${{ github.event.inputs.use-emoji }}"
           
+  test3:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.inputs.name == 'DEV' }} 
+    environment: Dev
+    steps:
+      - name: Determine Branch
+        run: |
+          echo "USERNAME = ${{vars.USERNAME}}"    
+   
